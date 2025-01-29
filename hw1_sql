@@ -1,4 +1,7 @@
 HW1:
+docker run -it --entrypoint bash "python:3.12.8"
+
+HW2:
 select count(1) from 'green_tripdata_2019-10.parquet' where trip_distance<=1;
 select count(1) from 'green_tripdata_2019-10.parquet' where trip_distance>7 and trip_distance<=10;
 select count(1) from 'green_tripdata_2019-10.parquet' where trip_distance>10;

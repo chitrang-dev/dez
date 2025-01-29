@@ -1,0 +1,16 @@
+HW1:
+select count(1) from 'green_tripdata_2019-10.parquet' where trip_distance<=1;
+select count(1) from 'green_tripdata_2019-10.parquet' where trip_distance>7 and trip_distance<=10;
+select count(1) from 'green_tripdata_2019-10.parquet' where trip_distance>10;
+select count(1) from 'green_tripdata_2019-10.csv' where trip_distance>3 and trip_distance<=7;
+select count(1) from 'green_tripdata_2019-10.parquet' where trip_distance>3 and trip_distance<=7;
+select max(trip_distance), PULocationID  from 'green_tripdata_2019-10.parquet' group by PULocationID order by 1 desc;
+select max(trip_distance), lpep_pickup_datetime  from 'green_tripdata_2019-10.csv' group by lpep_pickup_datetime order by 1 desc;
+
+select count(1), PULocationID  from 'green_tripdata_2019-10.parquet' group by PULocationID order by 1 desc;
+
+HW5:
+select count(1), PULocationID  from 'green_tripdata_2019-10.parquet' where lpep_pickup_datetime>='2019-10-18' and lpep_pickup_datetime<'2019-10-19' group by PULocationID order by 1 desc;
+
+HW6: 
+select max(tip_amount), PULocationID, DOLocationID  from 'green_tripdata_2019-10.parquet' where PULocationID=74 group by PULocationID, DOLocationID order by 1 desc;
